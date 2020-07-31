@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_celery_beat',
-    'app01'
+    'app01',
+    'django_celery_results'
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,10 @@ STATIC_URL = '/static/'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
 BROKER_URL = 'redis://192.168.80.129:6379/3'
 CELERY_BROKER_URL = 'redis://192.168.80.129:6379/3'
-CELERY_RESULT_BACKEND = 'redis://192.168.80.129:6379/5'
+# CELERY_RESULT_BACKEND = 'redis://192.168.80.129:6379/5'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+
 
 CELERY_ENABLE_UTC = False
 CELERY_TIMEZONE = 'Asia/Shanghai'
