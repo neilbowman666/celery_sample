@@ -1,5 +1,5 @@
 celery===4.4.6
 django-celery-beat==2.0.0
-Django===3.0.7
+Django===3.0.14
 django-celery-results==1.2.1
 flower==0.9.5
